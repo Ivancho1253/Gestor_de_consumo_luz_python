@@ -16,7 +16,7 @@ def calcular_facturacion():
             raise ValueError("El consumo final debe ser mayor o igual al consumo inicial.")
 
         # Cálculo de la corriente
-        potencia = consumo * 1000  # Convertir kWh a W (1 kWh = 1000 W)
+        potencia = ((consumo * 1000) / 1440)  # Convertir kWh a W (1 kWh = 1000 W) y 1440horas tiene 60 dias
         corriente = potencia / tension  # I = P / V
 
         # Cálculo de facturación por tramos
